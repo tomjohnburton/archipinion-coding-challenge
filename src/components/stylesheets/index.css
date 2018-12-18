@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Mono";
+  background-color: #ed5755;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.app-body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.app-body .app-dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 75vh;
+  width: 90%;
+  border-radius: 20px;
+  background-color: #e88c8a;
+}
+.app-body .app-dashboard .search-input {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.app-body .app-dashboard .search-input input {
+  padding: 20px;
+  width: 200px;
+  font-size: 30px;
+  text-align: center;
+  background-color: #e4c2c2;
+  border: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+.app-body .app-dashboard .dash-body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.app-body .app-dashboard .dash-body .poke-card-container .poke-card {
+  height: 200px;
+  width: 100px;
+  background-color: black;
+}
+
+/*# sourceMappingURL=index.css.map */

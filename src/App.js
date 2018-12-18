@@ -1,28 +1,44 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
 
-class App extends Component {
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      inputText: "",
+      inputTextLength: null
+    };
+  }
+
+  onInputChange = e => {
+    let { value } = e.target;
+    this.setState({
+      inputText: value,
+      inputTextLength: value.length
+    });
+  };
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="app-body">
+        <div className="app-dashboard">
+          <div className="search-input">
+            <input
+              value={this.state.inputText}
+              onChange={this.onInputChange}
+              type="text"
+            />
+          </div>
+
+          <div className="dash-body">
+            <div className="pokeballs">
+              <img src="/images/pokeball.png" alt="pokeball" width="100px" />
+            </div>
+            <div className="poke-card-container">
+              <div className="poke-card" />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
 }
-
-export default App;

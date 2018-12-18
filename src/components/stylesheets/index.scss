@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Mono";
+  background-color: #ed5755;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+@mixin flex-props {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-body {
+  height: 100vh;
+  @include flex-props();
+  .app-dashboard {
+    @include flex-props();
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 75vh;
+    width: 90%;
+    border-radius: 20px;
+    background-color: #e88c8a;
+    .search-input {
+      padding: 20px;
+
+      @include flex-props();
+      input {
+        padding: 20px;
+        width: 200px;
+        font-size: 30px;
+        text-align: center;
+        background-color: #e4c2c2;
+        border: none;
+        -webkit-appearance: none;
+        -webkit-border-radius: 0;
+      }
+    }
+    .dash-body {
+      width: 100%;
+      @include flex-props();
+      justify-content: space-evenly;
+
+      .poke-card-container {
+        .poke-card {
+          height: 200px;
+          width: 100px;
+          background-color: black;
+        }
+      }
+    }
+  }
+}
