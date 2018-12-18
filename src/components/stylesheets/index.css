@@ -48,7 +48,12 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.app-body .app-dashboard .dash-body .pokeballs {
+  display: flex;
+  flex-direction: column;
 }
 .app-body .app-dashboard .dash-body .poke-card-container .poke-card {
   height: 200px;

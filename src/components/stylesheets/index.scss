@@ -47,8 +47,12 @@ code {
     .dash-body {
       width: 100%;
       @include flex-props();
-      justify-content: space-evenly;
-
+      justify-content: space-around;
+      flex-wrap: wrap;
+      .pokeballs {
+        display: flex;
+        flex-direction: column;
+      }
       .poke-card-container {
         .poke-card {
           height: 200px;

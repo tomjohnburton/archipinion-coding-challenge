@@ -15,10 +15,9 @@ const errHandler = err => {
 export default {
   service: service,
 
-  getPokeList() {
+  getPokeList(limit) {
     return service.get("/").then(res => {
-      console.log(res.data);
-      return res;
+      return res.data.results.slice(0, limit);
     });
   }
 };
