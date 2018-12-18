@@ -17,7 +17,8 @@ export default {
 
   getPokeList(limit) {
     return service.get("/").then(res => {
-      return res.data.results.slice(0, limit);
+      let base = Math.floor(Math.random() * res.data.count);
+      return res.data.results.slice(base, base + limit);
     });
   }
 };

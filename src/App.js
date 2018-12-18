@@ -8,7 +8,7 @@ export default class App extends Component {
     this.state = {
       inputText: "",
       inputTextLength: null,
-      pokemon: [],
+      pokemon: null,
       pokeballs: []
     };
   }
@@ -16,14 +16,9 @@ export default class App extends Component {
   fetchPokemon = e => {
     e.preventDefault();
     api.getPokeList(this.state.inputTextLength).then(res => {
-      console.log("res", res);
-      if (!res) {
-        return <div>Loading</div>;
-      } else {
-        this.setState({
-          pokemon: [...this.state.pokemon, res.data]
-        });
-      }
+      this.setState({
+        pokemon: res
+      });
     });
   };
 
@@ -35,6 +30,9 @@ export default class App extends Component {
     });
   };
 
+  error() {
+    alert("TOOSHORT I said");
+  }
   renderPokeBalls() {
     let pokeballs = [];
     for (let ball = 0; ball < this.state.inputTextLength; ball++) {
@@ -54,20 +52,28 @@ export default class App extends Component {
               onChange={this.onInputChange}
               type="text"
             />
-            <button onClick={this.fetchPokemon}>Fetch Pokemon</button>
+            <button
+              onClick={
+                this.state.inputTextLength < 5 ? this.error : this.fetchPokemon
+              }
+            >
+              Fetch Pokemon
+            </button>
           </div>
 
           <div className="dash-body">
             <div className="pokeballs">{this.renderPokeBalls()}</div>
             <div>{this.state.inputTextLength}</div>
             <div className="poke-card-container">
-              {!this.state.pokemon.length == 0 ? (
+              {this.state.pokemon ? (
                 <Validation
                   textLength={this.state.inputTextLength}
                   pokemon={this.state.pokemon}
                 />
               ) : (
-                <Validation textLength={this.state.inputTextLength} />
+                <div>
+                  <Validation textLength={this.state.inputTextLength} />
+                </div>
               )}
               {/* <div className="poke-card" /> */}
             </div>

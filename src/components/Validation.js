@@ -2,7 +2,7 @@ import React from "react";
 import Pokemon from "./Pokemon";
 
 export default function Validation(props) {
-  console.log(props);
+  console.log("VALIDPROPS", props);
   return <div>{renderValidation(props)}</div>;
 }
 
