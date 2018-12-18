@@ -48,12 +48,15 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: flex-start;
   flex-wrap: wrap;
 }
-.app-body .app-dashboard .dash-body .pokeballs {
+.app-body .app-dashboard .dash-body .pokeballs-container .pokeballs {
   display: flex;
+  height: 400px;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 .app-body .app-dashboard .dash-body .poke-card-container .poke-card {
   height: 200px;

@@ -3,7 +3,12 @@ import Pokemon from "./Pokemon";
 
 export default function Validation(props) {
   console.log("VALIDPROPS", props);
-  return <div>{renderValidation(props)}</div>;
+  return (
+    <div>
+      <div>{renderValidation(props)}</div>
+      {props.pokemon ? <div>{renderPokemon(props)}</div> : ""}
+    </div>
+  );
 }
 
 function renderValidation(props) {

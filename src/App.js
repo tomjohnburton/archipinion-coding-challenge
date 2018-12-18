@@ -62,7 +62,9 @@ export default class App extends Component {
           </div>
 
           <div className="dash-body">
-            <div className="pokeballs">{this.renderPokeBalls()}</div>
+            <div className="pokeballs-container">
+              <div className="pokeballs">{this.renderPokeBalls()}</div>
+            </div>
             <div>{this.state.inputTextLength}</div>
             <div className="poke-card-container">
               {this.state.pokemon ? (
